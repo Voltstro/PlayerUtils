@@ -1,0 +1,16 @@
+name: PlayerUtils
+main: me.creepysin.playerutils.Main
+version: 1.0
+commands:
+  players:
+    description: Gets all online players
+    usage: /<command>
+  allplayers:
+    description: Gets every player who has joined the server
+    usage: /<command>
+  ping:
+    description: Gets your or others ping
+    usage: /<command>
+  uuid:
+    description: Gets a player's uuid
+    usage: /<command>
