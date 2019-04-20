@@ -31,5 +31,4 @@ public class AllPlayersCommand implements CommandExecutor {
 		player.sendMessage(ChatColor.GOLD + "Here is a list of all players:\n======================\n" + ChatColor.WHITE + allPlayers);
 		return true;
 	}
-
 }

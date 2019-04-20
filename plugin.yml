@@ -1,16 +1,27 @@
 name: PlayerUtils
 main: me.creepysin.playerutils.Main
-version: 1.0
+version: 0.1
+author: Creepysin
+website: https://github.com/Creepysin/PlayerUtils
 commands:
   players:
     description: Gets all online players
     usage: /<command>
+    permission: playerutils.players
   allplayers:
     description: Gets every player who has joined the server
     usage: /<command>
+    permission: playerutils.allplayers
   ping:
     description: Gets your or others ping
     usage: /<command>
+    permission: playerutils.ping
   uuid:
     description: Gets a player's uuid
     usage: /<command>
+    permission: playerutils.uuid
+  health:
+    description: Gets your or other health
+    usage: /<command>
+    permission: playerutils.health
+ 

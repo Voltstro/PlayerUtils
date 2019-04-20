@@ -12,6 +12,7 @@ import org.bukkit.command.CommandSender;
 public class UUIDCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		
 		if(args.length == 1) {
 			@SuppressWarnings("deprecation")
 			OfflinePlayer op = Bukkit.getOfflinePlayer(args[0]);
