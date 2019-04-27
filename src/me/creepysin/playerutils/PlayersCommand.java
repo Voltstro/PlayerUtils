@@ -15,8 +15,6 @@ public class PlayersCommand implements CommandExecutor {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		Player player = (Player) sender;
-		
 		String onlinePlayers = "";
 		
 		// Get all the online players and add them to the string
@@ -24,7 +22,7 @@ public class PlayersCommand implements CommandExecutor {
 			onlinePlayers += p.getDisplayName() + "\n";
 		}
 		
-		player.sendMessage(ChatColor.GOLD + "Here is a list of all current online players:\n======================\n" + ChatColor.WHITE + onlinePlayers);
+		sender.sendMessage(ChatColor.GOLD + "Here is a list of all current online players:\n======================\n" + ChatColor.WHITE + onlinePlayers);
 		
 		return true;
 	}

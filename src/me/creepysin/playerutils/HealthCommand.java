@@ -16,26 +16,26 @@ public class HealthCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
-		Player player = (Player) sender;
-		
 		// If there is an arg then use that as the player
 		if(args.length == 1) {
 		
 			@SuppressWarnings("deprecation")
 			Player target = plugin.getServer().getPlayerExact(args[0]);
 			if(!target.isOnline()) {
-				player.sendMessage(ChatColor.RED + "That player is not online!");
+				sender.sendMessage(ChatColor.RED + "That player is not online!");
 			}
 			else {
-				player.sendMessage(ChatColor.GOLD + target.getName() + "'s health is: " + target.getHealth() + " out of " + target.getHealthScale());
+				sender.sendMessage(ChatColor.GOLD + target.getName() + "'s health is: " + target.getHealth() + " out of " + target.getHealthScale());
 			}
 		}
 		else {
 			if(!(sender instanceof Player)) {
-				sender.sendMessage("You are not a player!");
+				sender.sendMessage(ChatColor.RED + "You are not a player! You need to input a player name.");
 			}
 			else {
-				player.sendMessage(ChatColor.GOLD + "Your health is: " + player.getHealth() + " out of " + player.getHealthScale());
+				Player target = (Player) sender;
+				
+				target.sendMessage(ChatColor.GOLD + "Your health is: " + target.getHealth() + " out of " + target.getHealthScale());
 			}
 		}
 		

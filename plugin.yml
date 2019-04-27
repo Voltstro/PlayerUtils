@@ -1,6 +1,6 @@
 name: PlayerUtils
 main: me.creepysin.playerutils.Main
-version: 0.1
+version: 0.1.1
 author: Creepysin
 website: https://github.com/Creepysin/PlayerUtils
 commands:

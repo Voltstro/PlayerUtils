@@ -5,7 +5,6 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class AllPlayersCommand implements CommandExecutor {
 
@@ -17,8 +16,6 @@ public class AllPlayersCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
-		Player player = (Player) sender;
-		
 		String allPlayers = "";
 		
 		// Get all the players and add them to the string
@@ -28,7 +25,7 @@ public class AllPlayersCommand implements CommandExecutor {
 			}
 		}
 		
-		player.sendMessage(ChatColor.GOLD + "Here is a list of all players:\n======================\n" + ChatColor.WHITE + allPlayers);
+		sender.sendMessage(ChatColor.GOLD + "Here is a list of all players:\n======================\n" + ChatColor.WHITE + allPlayers);
 		return true;
 	}
 }

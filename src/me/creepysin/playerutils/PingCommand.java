@@ -16,26 +16,26 @@ public class PingCommand implements CommandExecutor {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		Player player = (Player) sender;
-		
 		// If there is an arg then use that as the player
 		if(args.length == 1) {
 		
 			@SuppressWarnings("deprecation")
 			Player target = plugin.getServer().getPlayerExact(args[0]);
 			if(!target.isOnline()) {
-				player.sendMessage(ChatColor.RED + "That player is not online!");
+				sender.sendMessage(ChatColor.RED + "That player is not online!");
 			}
 			else {
-				player.sendMessage(ChatColor.GOLD + target.getName() + "'s ping is: " + getPing(target));
+				sender.sendMessage(ChatColor.GOLD + target.getName() + "'s ping is: " + getPing(target));
 			}
 		}
 		else {
 			if(!(sender instanceof Player)) {
-				sender.sendMessage("You are not a player!");
+				sender.sendMessage(ChatColor.RED + "You are not a player! You need to input a player name.");
 			}
 			else {
-				player.sendMessage(ChatColor.GOLD + "Your ping is: " + getPing(player));
+				Player target = (Player) sender;
+				
+				target.sendMessage(ChatColor.GOLD + "Your ping is: " + getPing(target));
 			}
 		}
 		
