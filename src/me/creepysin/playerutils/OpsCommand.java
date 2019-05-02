@@ -6,21 +6,20 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class AllPlayersCommand implements CommandExecutor {
+public class OpsCommand implements CommandExecutor {
 
-	private Main plugin;
+private Main plugin;
 	
-	public AllPlayersCommand(Main _main) {
+	public OpsCommand(Main _main) {
 		plugin = _main;
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
-		String allPlayers = "";
-		int playerCount = 0;
+		String operators = "";
 		
-		// Get all the players and add them to the string
-		for(OfflinePlayer p : plugin.getServer().getOfflinePlayers()) {
+		// Get all the operators
+		for(OfflinePlayer p : plugin.getServer().getOperators()) {
 			if(p.hasPlayedBefore()) {
 				
 				String offline = ChatColor.WHITE + "[" + ChatColor.DARK_RED + "Offline" + ChatColor.WHITE + "] ";
@@ -29,12 +28,13 @@ public class AllPlayersCommand implements CommandExecutor {
 					offline = ChatColor.WHITE + "[" + ChatColor.GREEN + "Online" + ChatColor.WHITE + "] ";
 				}
 				
-				allPlayers += offline + p.getName() + "\n";
-				playerCount++;
+				operators += offline + p.getName() + "\n";
 			}
 		}
 		
-		sender.sendMessage(ChatColor.GOLD + "So far " + ChatColor.YELLOW + playerCount + ChatColor.GOLD + " players have played! Here is a list of all the players:\n======================\n" + ChatColor.WHITE + allPlayers);
+		sender.sendMessage(ChatColor.GOLD + "Here is a list of all ops:\n======================\n" + ChatColor.WHITE + operators);
+		
 		return true;
 	}
+
 }

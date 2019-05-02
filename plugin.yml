@@ -1,9 +1,13 @@
 name: PlayerUtils
 main: me.creepysin.playerutils.Main
-version: 0.1.1
-author: Creepysin
+version: 0.2
+author: GitHub/Creepysin
 website: https://github.com/Creepysin/PlayerUtils
+description: A set of basic player utils.
 commands:
+  playerutils:
+    description: The base home page of playerutils
+    usage: /<command> [version|about]
   players:
     description: Gets all online players
     usage: /<command>
@@ -14,14 +18,48 @@ commands:
     permission: playerutils.allplayers
   ping:
     description: Gets your or others ping
-    usage: /<command>
+    usage: /<command> [player]
     permission: playerutils.ping
   uuid:
     description: Gets a player's uuid
-    usage: /<command>
+    usage: /<command> [player]
     permission: playerutils.uuid
   health:
     description: Gets your or other health
-    usage: /<command>
+    usage: /<command> [player]
     permission: playerutils.health
- 
+  ops:
+    description: Gets all operators
+    usage: /<command>
+    permission: playerutils.ops
+permissions:
+  playerutils.*:
+    description: Gives access to all of playerutils commands
+    children:
+      playerutils.players: true
+      playerutils.allplayers: true
+      playerutils.ping: true
+      playerutils.uuid: true
+      playerutils.health: true
+      playerutils.ops: true
+  playerutils.players:
+    description: Allows you to see you is online on the server
+    default: true
+  playerutils.allplayers:
+    description: Allows you to see anyone who has joined the server
+    default: op
+  playerutils.ping:
+    description: Allows you to see your ping
+    default: true
+  playerutils.ping.others:
+    description: Allows you to see others ping
+    default: op
+  playerutils.uuid:
+    description: Allows you to see someones uuid
+    default: op
+  playerutils.health:
+    description: Allows you to see your exact health
+    default: op
+  playerutils.ops:
+    description: Allows you to see all the ops the server has.
+    default: true   

@@ -19,8 +19,16 @@ public class PingCommand implements CommandExecutor {
 		// If there is an arg then use that as the player
 		if(args.length == 1) {
 		
+			if((sender instanceof Player)) { // If it is a player looking at another players ping check to see if they have the permission playerutils.ping.others
+				Player excute = (Player) sender;
+				if(!excute.hasPermission("playerutils.ping.others")) {
+					excute.sendMessage(ChatColor.RED + "You do not have access to see other players ping!");
+					return true;
+				}
+			}
+			
 			@SuppressWarnings("deprecation")
-			Player target = plugin.getServer().getPlayerExact(args[0]);
+			Player target = plugin.getServer().getPlayer(args[0]);
 			if(!target.isOnline()) {
 				sender.sendMessage(ChatColor.RED + "That player is not online!");
 			}
