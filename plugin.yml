@@ -1,6 +1,7 @@
 name: PlayerUtils
 main: me.creepysin.playerutils.Main
-version: 0.2
+version: 1.0
+api-version: 1.14
 author: GitHub/Creepysin
 website: https://github.com/Creepysin/PlayerUtils
 description: A set of basic player utils.

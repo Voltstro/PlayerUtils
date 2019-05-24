@@ -19,7 +19,6 @@ public class HealthCommand implements CommandExecutor {
 		// If there is an arg then use that as the player
 		if(args.length == 1) {
 		
-			@SuppressWarnings("deprecation")
 			Player target = plugin.getServer().getPlayerExact(args[0]);
 			if(!target.isOnline()) {
 				sender.sendMessage(ChatColor.RED + "That player is not online!");
