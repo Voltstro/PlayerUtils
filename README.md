@@ -1,5 +1,5 @@
 # PlayerUtils
-PlayerUtils - A Minecraft Spigot plugin
+PlayerUtils - A Minecraft Spigot plugin that provides some basic player related commands.
 
 ## Whats the purpose of this plugin?
 

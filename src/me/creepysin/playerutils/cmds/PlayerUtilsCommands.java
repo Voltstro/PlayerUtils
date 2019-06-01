@@ -1,11 +1,17 @@
-package me.creepysin.playerutils;
+package me.creepysin.playerutils.cmds;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 
-public class PlayerUtilsCommands implements CommandExecutor {
+import me.creepysin.playerutils.Main;
+
+public class PlayerUtilsCommands implements CommandExecutor, TabCompleter {
 
 private Main plugin;
 	
@@ -28,6 +34,15 @@ private Main plugin;
 		}
 		
 		return true;
+	}
+	
+	public List<String> onTabComplete (CommandSender sender, Command cmd, String label, String[] args) {
+		List<String> subCmds = new ArrayList<String>();
+		
+		subCmds.add("version");
+		subCmds.add("about");
+		
+		return subCmds;
 	}
 	
 	private void aboutMsg(CommandSender sender) {

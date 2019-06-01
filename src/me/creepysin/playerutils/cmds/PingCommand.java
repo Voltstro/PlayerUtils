@@ -1,4 +1,4 @@
-package me.creepysin.playerutils;
+package me.creepysin.playerutils.cmds;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -6,6 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_14_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
+
+import me.creepysin.playerutils.Main;
 
 public class PingCommand implements CommandExecutor {
 

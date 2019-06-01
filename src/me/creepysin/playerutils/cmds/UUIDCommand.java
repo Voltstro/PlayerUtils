@@ -1,4 +1,4 @@
-package me.creepysin.playerutils;
+package me.creepysin.playerutils.cmds;
 
 import java.util.UUID;
 
